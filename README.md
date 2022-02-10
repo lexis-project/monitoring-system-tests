@@ -2,7 +2,7 @@
 This repository contains a list of LEXIS testcases (collected from the individual LEXIS modules), and scripts to execute the tests specified in the list of testcases. Testcases are documented in the directory `docs`. Some testcases are implemented in scripts using Robot framework in directory `ddi-test`.
 
 # Acknowledgement
-This code repository is a result of the LEXIS project. The project has received funding from the European Union’s Horizo
+The project has received funding from the European Union’s Horizon 2020 research and innovation program under grant agreement 825532.
 
 # Subdirectory ddi-test
 
