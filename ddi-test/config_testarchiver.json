@@ -1,0 +1,9 @@
+{
+"db_engine": "postgresql",
+"database": "robot",
+"host": "postgres.host",
+"port": "5432",
+"user": "<user>",
+"password": "<password>",
+"require_ssl": "false"
+}

@@ -1,0 +1,96 @@
+machines:
+- ip: 10.10.0.1
+  name: irods-lb.host
+  ports:
+  - 1247
+- ip: 10.10.0.2
+  name: irods1.host
+  ports:
+  - 1247
+- ip: 10.10.0.3
+  name: irods2.host
+  ports:
+  - 1247
+
+federated_irods:
+  zone: tempZone2
+  destination_path: '/tempZone2/project/testproject'
+federated_irods_2:
+  zone: tempZone3
+  destination_path: '/tempZone3/project/testproject'
+
+irods:
+  hosts:
+  - 2
+  - 3
+  lb_host: 0
+  openid_key: "1111111111111111111111111111111111111111"
+  openid_microservice: "https://irods-auth.host"
+  pass: "testpassword"
+  port: 1247
+  project: ''
+  user: test_user
+  zone: tempZone1
+
+keycloak:
+  client_id: "MONITORING"
+  client_secret_key: "2222222222222222222222222222222222"
+  host: "https://aai.host/auth/"
+  pass: testpassword
+  realm_name: "AAI"
+  sid: "33333333333333333333"
+  user: test_user
+
+robot:
+  mattermost_hook: https://slack.host/hooks/hfksljfhkjsdfhjkdfh
+  output_path: /home/debian/ddi-test/logs
+  output_url: https://elasticsearch.host
+  notify: True
+  suites:
+    - auth.robot
+    - irods_local.robot
+    - irods_federation.robot
+    - hdl_test.robot
+    - api_test.robot
+
+API_hosts:
+  staging_api: "https://lexis-staging.host/staging"
+  irods_api:   "https://lexis-ddi.host/demo"
+  ssh_api:     "https://lexis-test.host/ssh"
+  gridmap_api: "https://irods-lb.host/gridftp"
+
+B2SAFE_body:
+  source_system: lrz_iRODS
+  target_system: it4i_iRODS    
+  source_path: project/testproject/test_replication
+DLTE_B2SAFE_body:
+  target_system: it4i_iRODS
+  target_path: project/testproject/test_replication
+STAGING_body:
+  source_system: lrz_iRODS
+  source_path: project/testproject/test_b2safe
+  target_system: lrz_staging_area
+  target_path: test
+  encryption: "no"
+  compression: "no"
+DLTE_STAGING_body:
+  target_system: lrz_staging_area
+  target_path: DDIStaging/test_b2safe
+IRODSAPI:
+  meta_search: {}
+  access: project
+  internalID: test_b2safe
+  project: testproject
+  title: testdata
+  creator: "LEXIS TEAM"
+  new: 
+    access: project
+    project: testproject
+    push_method: empty
+SSH:
+  key: keys/random-key.pub
+  path: mypath
+  host: 10.10.0.1
+GRIDMAP:
+  dn: "CN=Lexis Robot Name,O=Center Within The LEXIS Federation,DC=somedc"
+

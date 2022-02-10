@@ -1,0 +1,8 @@
+{
+     "handle_server_url": "https://handle.host:8000",
+     "private_key": "./keys/admpriv.pem",
+     "certificate_only":"./keys/certificate.pem",
+     "prefix": "21.12345",
+     "handleowner": "301:0.NA/21.12345",
+     "HTTPS_verify": "False"
+}
