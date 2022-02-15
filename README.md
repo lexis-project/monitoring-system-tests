@@ -1,4 +1,7 @@
 # monitoring-system-tests
+
+<a href="https://doi.org/10.5281/zenodo.6080203"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6080203.svg" alt="DOI"></a>
+
 This repository contains a list of LEXIS testcases (collected from the individual LEXIS modules), and scripts to execute the tests specified in the list of testcases. Testcases are documented in the directory `docs`. Some testcases are implemented in scripts using Robot framework in directory `ddi-test`.
 
 ## Acknowledgement
